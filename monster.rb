@@ -27,11 +27,11 @@ class Monster < Character
   def attack(brave)
 
     monster_type = decision_transform
-    puts "#{@name}の攻撃"
+    attack_message
     damage = caluculate_damage(brave)
     cause_damage(target: brave, damage: damage)
 
-    puts "#{brave.name}の残りHPは#{brave.hp}だ"
+    # puts "#{brave.name}の残りHPは#{brave.hp}だ"
   end
 
   private
@@ -48,10 +48,10 @@ class Monster < Character
   def transform
     transform_name = "ドラゴン"
 
-    puts <<~TEXT
-    #{@name}は怒っている
-    #{@name}は#{transform_name}に変身した
-    TEXT
+    # puts <<~TEXT
+    # #{@name}は怒っている
+    # #{@name}は#{transform_name}に変身した
+    # TEXT
 
     @offense *= POWER_UP_RATE
     @name = transform_name
@@ -67,6 +67,6 @@ class Monster < Character
 
     target.hp -= damage
     target.hp = 0 if target.hp < 0
-    puts "#{target.name}は#{damage}のダメージを受けた"
+    # puts "#{target.name}は#{damage}のダメージを受けた"
   end
 end
