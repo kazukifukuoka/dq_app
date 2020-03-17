@@ -5,7 +5,14 @@ module MessageDialog
     puts "必殺攻撃" if attack_type == "special_attack"
   end
 
-  def damage_message
+  def damage_message(**params)
+    target = params[:target]
+    damage = params[:damage]
+
+    puts <<~TEXT
+    #{target.name}は#{damage}のダメージを受けた
+    #{target.name}は#{damage}のダメージを受けた
+    TEXT
   end
 
   def end_message
