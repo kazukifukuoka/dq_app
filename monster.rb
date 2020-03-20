@@ -52,6 +52,7 @@ class Monster < Character
     # #{@name}は怒っている
     # #{@name}は#{transform_name}に変身した
     # TEXT
+    transform_message(origin_name: @name, transform_name: transform_name)
 
     @offense *= POWER_UP_RATE
     @name = transform_name
